@@ -45,7 +45,7 @@ public class SiteMapper extends RecursiveTask<Node> {
             return null;
         }
 
-        System.out.println(url);
+//        System.out.println(url);
         Elements elements = doc.select("a");
 
         List<SiteMapper> taskList = new ArrayList<>();

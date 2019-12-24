@@ -1,4 +1,5 @@
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.concurrent.ForkJoinPool;
 
@@ -9,6 +10,7 @@ public class Main {
 //        String url = "http://lenta.ru/";
 
         HashSet<String> hashSet = new HashSet<>();
+        Collections.synchronizedSet(hashSet);
         Node node =  new ForkJoinPool().invoke(new SiteMapper(hashSet, url, url, 0));
         Document doc = new Document(node);
         doc.WriteToFile("D:\\mapperResult.txt");
